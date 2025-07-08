@@ -1,0 +1,149 @@
+:root {
+  --bg: #343541;
+  --input-bg: #40414f;
+  --text: #e1e1e1;
+  --user-bg: #0b93f6;
+  --bot-bg: #444654;
+  --font: 'Segoe UI', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  padding: 1rem;
+  text-align: center;
+  background: #202123;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-bottom: 1px solid #3d3f4a;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+#chat-container {
+  width: 100%;
+  max-width: 750px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-log {
+  list-style: none;
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  border-radius: 10px;
+  max-height: 70vh;
+  scroll-behavior: smooth;
+}
+
+#chat-log li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 0.75rem;
+}
+
+/* User message on right */
+.user {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* Bot message on left */
+.bot {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.user .bubble {
+  background: var(--user-bg);
+  color: #fff;
+  align-self: flex-end;
+  border-radius: 10px 10px 0 10px;
+}
+
+/* Bot bubble */
+.bot .bubble {
+  background: var(--bot-bg);
+  color: #e1e1e1;
+  border-radius: 10px 10px 10px 0;
+}
+
+.bubble {
+  padding: 0.75rem 1rem;
+  max-width: 85%;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+}
+
+/* Avatar */
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #777;
+}
+
+/* Chat input */
+#chat-form {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #202123;
+  border-top: 1px solid #3d3f4a;
+}
+
+#user-input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  background: var(--input-bg);
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 8px;
+}
+
+#user-input:focus {
+  outline: none;
+  border-color: #0b93f6;
+}
+
+button {
+  padding: 0.8rem 1.2rem;
+  background: #0b93f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #007cd6;
+}
+
+button:active {
+  transform: scale(0.98);
+}
